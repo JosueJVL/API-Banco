@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[TB_USUARIOS] (
+    [USU_ID_USUARIO]            INT           IDENTITY (1, 1) NOT NULL,
+    [USU_USUARIO]               VARCHAR (100) NULL,
+    [USU_PASSWORD]              VARCHAR (100) NULL,
+    [USU_ROL_ADMINISTRADOR]     VARCHAR (100) NULL,
+    [USU_ESTATUS]               VARCHAR (100) NULL,
+    [USU_FECHA_CREACION]        DATE          NULL,
+    [USU_FECHA_CAMBIO_PASSWORD] DATE          NULL,
+    [USU_CANTIDAD_LOGIN_ERROR]  INT           NULL,
+    [USU_FLAG_ACTIVO]           BIT           NULL,
+    PRIMARY KEY CLUSTERED ([USU_ID_USUARIO] ASC)
+);
+

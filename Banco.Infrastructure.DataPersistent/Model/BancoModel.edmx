@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_USUARIOS">
+          <Key>
+            <PropertyRef Name="USU_ID_USUARIO" />
+          </Key>
+          <Property Name="USU_ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USU_USUARIO" Type="varchar" MaxLength="100" />
+          <Property Name="USU_PASSWORD" Type="varchar" MaxLength="100" />
+          <Property Name="USU_ROL_ADMINISTRADOR" Type="varchar" MaxLength="100" />
+          <Property Name="USU_ESTATUS" Type="varchar" MaxLength="100" />
+          <Property Name="USU_FECHA_CREACION" Type="date" />
+          <Property Name="USU_FECHA_CAMBIO_PASSWORD" Type="date" />
+          <Property Name="USU_CANTIDAD_LOGIN_ERROR" Type="int" />
+          <Property Name="USU_FLAG_ACTIVO" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="BancoModelStoreContainer">
+          <EntitySet Name="TB_USUARIOS" EntityType="Self.TB_USUARIOS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_USUARIOS" EntityType="BancoModel.TB_USUARIOS" />
+        </EntityContainer>
+        <EntityType Name="TB_USUARIOS">
+          <Key>
+            <PropertyRef Name="USU_ID_USUARIO" />
+          </Key>
+          <Property Name="USU_ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USU_USUARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USU_PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USU_ROL_ADMINISTRADOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USU_ESTATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USU_FECHA_CREACION" Type="DateTime" Precision="0" />
+          <Property Name="USU_FECHA_CAMBIO_PASSWORD" Type="DateTime" Precision="0" />
+          <Property Name="USU_CANTIDAD_LOGIN_ERROR" Type="Int32" />
+          <Property Name="USU_FLAG_ACTIVO" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+          <EntitySetMapping Name="TB_USUARIOS">
+            <EntityTypeMapping TypeName="BancoModel.TB_USUARIOS">
+              <MappingFragment StoreEntitySet="TB_USUARIOS">
+                <ScalarProperty Name="USU_FLAG_ACTIVO" ColumnName="USU_FLAG_ACTIVO" />
+                <ScalarProperty Name="USU_CANTIDAD_LOGIN_ERROR" ColumnName="USU_CANTIDAD_LOGIN_ERROR" />
+                <ScalarProperty Name="USU_FECHA_CAMBIO_PASSWORD" ColumnName="USU_FECHA_CAMBIO_PASSWORD" />
+                <ScalarProperty Name="USU_FECHA_CREACION" ColumnName="USU_FECHA_CREACION" />
+                <ScalarProperty Name="USU_ESTATUS" ColumnName="USU_ESTATUS" />
+                <ScalarProperty Name="USU_ROL_ADMINISTRADOR" ColumnName="USU_ROL_ADMINISTRADOR" />
+                <ScalarProperty Name="USU_PASSWORD" ColumnName="USU_PASSWORD" />
+                <ScalarProperty Name="USU_USUARIO" ColumnName="USU_USUARIO" />
+                <ScalarProperty Name="USU_ID_USUARIO" ColumnName="USU_ID_USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
