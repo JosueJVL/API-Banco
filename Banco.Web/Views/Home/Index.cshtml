@@ -1,0 +1,18 @@
+﻿@model  Banco.Web.Models.Movie;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Title</title>
+</head>
+<body>
+    <span style="font-size: 18pt;">Hello, <b>WVC</b> work !!</span>
+    The movie <b>@Model.RelaseDate</b> was, release @Model.RelaseDate.ToLongDateString()
+</body>
+</html>
